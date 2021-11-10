@@ -1,0 +1,26 @@
+
+on:
+  workflow_call:
+    inputs:
+      ruby_version:
+        required: true
+        type: string
+      macos_image:
+        required: true
+        type: string
+
+jobs:
+  setup:
+    - name: Clean after
+        uses: mickem/clean-after-action@v1.1.1
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1.84.0
+      env:
+        ImageOS: ${{ inputs.macos_image }}
+      with:
+        ruby-version: ${{ inputs.ruby_version }}
+        bundler-cache: true
