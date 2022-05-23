@@ -19,7 +19,7 @@ runs:
       uses: actions/checkout@v2
 
     - name: Bundler
-      shell: zsh
+      shell: bash
       run: |
         bundle config set --local path ~/gems
         bundle install
