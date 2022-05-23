@@ -18,6 +18,12 @@ runs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Bundler
+      shell: zsh
+      run: |
+        bundle config set --local path ~/gems
+        bundle install
+
     # - name: Setup Ruby
     #   uses: ruby/setup-ruby@v1
     #   env:
