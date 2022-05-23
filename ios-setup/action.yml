@@ -13,7 +13,7 @@ runs:
   using: "composite"
   steps:
     - name: Clean after
-      uses: dev4dev/clean-after-action@v2
+      uses: mickem/clean-after-action@v1.1.1
 
     - name: Checkout
       uses: actions/checkout@v3
