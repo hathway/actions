@@ -13,10 +13,10 @@ runs:
   using: "composite"
   steps:
     - name: Clean after
-      uses: mickem/clean-after-action@v1.1.1
+      uses: dev4dev/clean-after-action@v2
 
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Bundler
       shell: bash
