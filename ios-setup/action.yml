@@ -3,11 +3,11 @@ description: "Prepare all the stuff for fastlane build"
 
 inputs:
   ruby_version:
+    description: Specify ruby version to use
     required: true
-    type: string
   macos_image:
+    description: Mac OS image Version
     required: true
-    type: string
 
 runs:
   using: "composite"
@@ -19,7 +19,7 @@ runs:
       uses: actions/checkout@v2
 
     - name: Setup Ruby
-      uses: ruby/setup-ruby@v1.84.0
+      uses: ruby/setup-ruby@v1
       env:
         ImageOS: ${{ inputs.macos_image }}
       with:
