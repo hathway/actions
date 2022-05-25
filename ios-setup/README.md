@@ -5,7 +5,7 @@
 This action will:
 
 - clone source code
-- install Ruby and gems. this is needed for running fastlane. it caches bundler output, that improves performance of that operation
+[Is not supported on arm nodes] - install Ruby and gems. this is needed for running fastlane. it caches bundler output, that improves performance of that operation
 - adds post hook that will delete all the files inside of the work directory, this is needed to free up space on a build node
     Additional configuration adjustments should be done inside of the `Gymfile` for fastlane, to make all the artifacts, related to the build, stored inside of the workspace and not in the system directories
 
@@ -35,9 +35,9 @@ jobs:
     steps:
       - name: Env Setup
         uses: hathway/actions/ios-setup@master
-        with:
-          ruby_version: 3.0.2
-          macos_image: macos11.1
+        # with:
+        #   ruby_version: 3.0.2
+        #   macos_image: macos11.1
         
       # Fastlane build steps go here
 
